@@ -27,10 +27,10 @@ function merge(arr1, arr2){
 
 
 function mergeSorting(arr){
-
+    if(arr.length<=1) return arr;
     let middle=Math.floor(arr.length/2);
     let left= mergeSorting(arr.slice(0,middle));
-    let right= mergeSorting(arr.slice(mid));
+    let right= mergeSorting(arr.slice(middle));
 
     return merge(left, right);
 }
