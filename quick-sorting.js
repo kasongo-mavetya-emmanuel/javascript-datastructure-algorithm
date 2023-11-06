@@ -1,6 +1,6 @@
 function pivot(arr, start=0, end=arr.length-1){
 
-    const swap=(arr, idx1, idx2)=>([arr[idx1], arr[idx2]]=[arr[idx2], arr[idx2]]);
+    const swap=(arr, idx1, idx2)=>([arr[idx1], arr[idx2]]=[arr[idx2], arr[idx1]]);
 
     let piv=arr[start];
     let swapIdx=start;
@@ -9,7 +9,6 @@ function pivot(arr, start=0, end=arr.length-1){
         if(piv>arr[i]){
             swapIdx++;
             swap(arr, swapIdx, i);
-         
         }
     }
     swap(arr, start, swapIdx);
@@ -18,15 +17,20 @@ function pivot(arr, start=0, end=arr.length-1){
 }
 
 function quickSorting(arr, left=0, right=arr.length-1){
-
     if(left<right){
         let pivIdx= pivot(arr,left,right);
 
-        quickSorting(arr,left, pivIdx-1);
+        quickSorting(arr, left, pivIdx-1);
 
-        quickSorting(arr, pivIdx+1,end);
+        quickSorting(arr, pivIdx+1 , right);
     }
+
+    return arr;
 
 }
 
-console.log(quickSorting([3,-2,10,35,33,4,2,36,8,9,2,1]));
+console.log(quickSorting([3,-2,10,35,33,4,36,8,9,2,1]));
+
+
+
+
