@@ -44,6 +44,17 @@ class SingleLinkedList{
         }
         return current;
     }
+
+    shift(){
+        if(!this.head) return undefined;
+        let currentHead=this.head;
+        this.head=currentHead.next;
+         this.length--;
+        if(this.length===0) return undefined;
+
+        return currentHead;
+
+    }
 }
 
 const list= new SingleLinkedList();
@@ -53,6 +64,6 @@ list.push('you');
 list.push(99);
 list.push('great');
 
-console.log(list.head.next.next);
-
+//list.pop();
+//list.shift();
 console.log(list);
