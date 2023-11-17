@@ -55,6 +55,19 @@ class SingleLinkedList{
         return currentHead;
 
     }
+    unshift(val){
+        let newNode=new Node(val);
+        if(!this.head){
+            this.head=newNode;
+            this.tail= newNode;
+        }
+
+        newNode.next=this.head;
+        this.head= newNode;
+        this.length++;
+        return this;
+        
+    }
 }
 
 const list= new SingleLinkedList();
@@ -66,4 +79,5 @@ list.push('great');
 
 //list.pop();
 //list.shift();
+list.unshift('new');
 console.log(list);
