@@ -68,6 +68,17 @@ class SingleLinkedList{
         return this;
         
     }
+    get(index){
+        let count=0;
+        let current= this.head;
+        if(index<0 || index> this.length) return null;
+
+        while(count!=index){
+            current =current.next;
+            count++;
+        }
+        return current;
+    }
 }
 
 const list= new SingleLinkedList();
@@ -76,8 +87,10 @@ list.push('hi');
 list.push('you');
 list.push(99);
 list.push('great');
+list.unshift('new');
 
 //list.pop();
 //list.shift();
-list.unshift('new');
+//list.unshift('new');
+console.log(list.get(2));
 console.log(list);
