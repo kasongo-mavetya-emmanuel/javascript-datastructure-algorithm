@@ -90,16 +90,15 @@ class SingleLinkedList{
     insert(index, val){
 
         if(index<0 || index>this.length) return false;
-        if(index=== this.length) return this.push(val);
-        if(index===0) return this.unshift(val);
+        if(index=== this.length) return !!this.push(val);
+        if(index===0) return !!this.unshift(val);
 
-        let newNode= Node(val);
+        let newNode=new Node(val);
         let prev= this.get(index-1);
         let temp= prev.next;
         prev.next=newNode;
         newNode.next=temp;
         this.length++;
-        console.log('--',this);
         return true;
     }
 }
@@ -110,12 +109,14 @@ list.push('hi');
 list.push('you');
 list.push(99);
 list.push('great');
-list.unshift('new');
+//list.unshift('new');
 
 //list.pop();
 //list.shift();
 //list.unshift('new');
 //console.log(list.get(2));
-console.log(list.set('get',2));
+//console.log(list.set('get',2));
+console.log(list.insert(0,'again'));
+
 
 console.log(list);
