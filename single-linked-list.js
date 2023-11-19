@@ -101,6 +101,9 @@ class SingleLinkedList{
         this.length++;
         return true;
     }
+    remove(){
+        
+    }
 }
 
 const list= new SingleLinkedList();
