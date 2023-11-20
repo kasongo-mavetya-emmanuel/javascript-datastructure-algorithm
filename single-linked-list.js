@@ -129,6 +129,15 @@ class SingleLinkedList{
         return this;
 
     }
+    print(){
+        let arr=[];
+        let current= this.head;
+        while(current){
+            arr.push(current.val);
+            current= current.next;
+        }
+        console.log(arr);
+    }
 }
 
 const list= new SingleLinkedList();
@@ -146,7 +155,8 @@ list.push('great');
 //console.log(list.set('get',2));
 //console.log(list.insert(0,'again'));
 // console.log(list.remove(5));
-list.reverse();
+//list.reverse();
+list.print();
 
 
 console.log(list);
