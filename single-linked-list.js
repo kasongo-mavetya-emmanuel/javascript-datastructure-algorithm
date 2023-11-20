@@ -101,7 +101,16 @@ class SingleLinkedList{
         this.length++;
         return true;
     }
-    remove(){
+    remove(index){
+        if(index<0||index>=this.length) return undefined;
+        if(index===0) return this.shift();
+        if(index=== this.length-1) return this.pop();
+
+        let previous= this.get(index-1);
+        let removed= previous.next;
+        previous.next=removed.next;
+        this.length--;
+        return removed;
         
     }
 }
@@ -112,14 +121,16 @@ list.push('hi');
 list.push('you');
 list.push(99);
 list.push('great');
-//list.unshift('new');
+list.unshift('new');
 
 //list.pop();
 //list.shift();
 //list.unshift('new');
 //console.log(list.get(2));
 //console.log(list.set('get',2));
-console.log(list.insert(0,'again'));
+//console.log(list.insert(0,'again'));
+console.log(list.remove(5));
+
 
 
 console.log(list);
