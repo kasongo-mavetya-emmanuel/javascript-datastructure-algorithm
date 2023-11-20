@@ -113,6 +113,22 @@ class SingleLinkedList{
         return removed;
         
     }
+    reverse(){
+        let node=this.head;
+        this.head=this.tail;
+        this.tail=node;
+        let prev=null;
+        let  next;
+        for(let i=0; i<this.length;i++){
+            next= node.next;
+            node.next=prev;
+            prev=node;
+            node=next;
+        }
+
+        return this;
+
+    }
 }
 
 const list= new SingleLinkedList();
@@ -121,7 +137,7 @@ list.push('hi');
 list.push('you');
 list.push(99);
 list.push('great');
-list.unshift('new');
+//list.unshift('new');
 
 //list.pop();
 //list.shift();
@@ -129,8 +145,8 @@ list.unshift('new');
 //console.log(list.get(2));
 //console.log(list.set('get',2));
 //console.log(list.insert(0,'again'));
-console.log(list.remove(5));
-
+// console.log(list.remove(5));
+list.reverse();
 
 
 console.log(list);
