@@ -43,6 +43,20 @@ class DoubleLinkedList{
         return poppedNode;
 
     }
+    shift(){
+        if(!this.head) return undefined;
+        let oldHead=this.head;
+        if(this.length===1){
+            this.head=null;
+            this.tail=null;
+        }else{
+            this.head=oldHead.next;
+            this.prev=null;
+            oldHead.next=null;
+        }
+        this.length--;
+        return oldHead;
+    }
     unShift(val){
         let newNode=new Node(val);
 
