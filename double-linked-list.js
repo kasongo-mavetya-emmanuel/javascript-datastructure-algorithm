@@ -74,6 +74,46 @@ class DoubleLinkedList{
         return this;
 
     }
+    get(index){
+        if(this.length===0) return null;
+        if(index<0 || index>this.length) return null;
+        let count;
+        let current;
+        if(indext<=this.length/2){
+            count=0;
+            current=this.head;
+            while(index!=count){
+                current= current.next;
+                count ++;
+            }
+    
+
+        }
+        else{
+
+            current=this.tail;
+            count= this.length-1;
+            
+            while(index!=count){
+                current= current.prev;
+                count --;
+            }
+    
+
+        }
+
+        return current;
+    }
+    set(index, val){
+        let foundNode= this.get(index);
+        if(foundNode!==null){
+            foundNode.val=val;
+            return true;
+        }
+
+        return false;
+
+    }
 
 
 }
