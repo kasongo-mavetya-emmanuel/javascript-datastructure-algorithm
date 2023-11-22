@@ -14,7 +14,7 @@ class DoubleLinkedList{
     }
     push(val){
         let newNode=new Node(val);
-        if(!this.length===0){
+        if(this.length===0){
             this.head=newNode;
             this.tail=newNode;
             
@@ -79,7 +79,7 @@ class DoubleLinkedList{
         if(index<0 || index>this.length) return null;
         let count;
         let current;
-        if(indext<=this.length/2){
+        if(index<=this.length/2){
             count=0;
             current=this.head;
             while(index!=count){
@@ -114,6 +114,22 @@ class DoubleLinkedList{
         return false;
 
     }
+    insert(val, index){
+      if(index===0) return !!this.unShift(val);
+      if(index===this.length) return !!this.push(val);
+      if(index>this.length || index<0) return false;
+      let newNode= new Node(val);
+      let before= this.get(index-1);
+      let after= before.next;
+      before.next=newNode;
+      newNode.next= after;
+      newNode.prev=before;
+      after.prev=newNode;
+ 
+     this.length++;
+     return true;
+      
+    }
 
 
 }
@@ -124,14 +140,14 @@ list.push('hi');
 list.push('you');
 list.push(99);
 list.push('great');
-//list.unshift('new');
+//list.unShift('new');
 
 //list.pop();
 //list.shift();
 //list.unshift('new');
 //console.log(list.get(2));
-//console.log(list.set('get',2));
-//console.log(list.insert(0,'again'));
+//console.log(list.set(1,'set'));
+//console.log(list.insert('again',1));
 // console.log(list.remove(5));
 //list.reverse();
 //list.print();
