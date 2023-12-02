@@ -1,6 +1,6 @@
 class Node{
     constructor(value){
-        this.val=this.value;
+        this.val=value;
         this.next=null;
     }
 }
@@ -37,3 +37,11 @@ class Queue{
 }
 
 const queue= new Queue();
+queue.enqueue('hi');
+queue.enqueue('again');
+queue.enqueue('new');
+queue.enqueue(4);
+
+queue.dequeue();
+
+console.log(queue);
