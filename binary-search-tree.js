@@ -72,3 +72,17 @@ class BinarySearchTree{
 }
 
 const tree= new BinarySearchTree();
+
+tree.insert(50);
+tree.insert(30);
+tree.insert(10);
+tree.insert(70);
+tree.insert(90);
+tree.insert(12);
+tree.insert(20);
+tree.insert(99);
+
+console.log(tree.find(10));
+
+console.log(tree.contains(15));
+console.log(tree);
