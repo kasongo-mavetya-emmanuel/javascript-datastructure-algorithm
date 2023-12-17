@@ -86,6 +86,16 @@ class BinarySearchTree{
         return data;
     
     }
+    DSFpreOrder(){
+        let data=[];
+        function traverse(node){
+            data.push(node.value);
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+        }
+        traverse(this.root);
+        return data;
+    }
 }
 
 const tree= new BinarySearchTree();
@@ -105,3 +115,4 @@ console.log(tree.contains(15));
 console.log(tree);
 
 console.log(tree.BSF());
+console.log(tree.DSFpreOrder())
