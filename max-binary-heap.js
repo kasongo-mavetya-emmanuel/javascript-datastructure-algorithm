@@ -21,6 +21,16 @@ class MaxBinaryHeap{
 
         }
     }
+
+    extractMax(){
+        let max=this.values[0];
+        let end= this.values.pop();
+        if(this.values.length>0){
+            this.values[0]=end;
+            this.sinkDown();
+        }
+        return max;
+    }
 }
 const heap= new MaxBinaryHeap();
 heap.insert(41);
