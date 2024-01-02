@@ -75,5 +75,7 @@ prQueue.enqueue("gunshot wound", 1)
 prQueue.enqueue("high fever",4)
 prQueue.enqueue("broken arm",2)
 prQueue.enqueue("glass in foot",3)
+prQueue.dequeue();
 
-console.log(heap);
+
+console.log(prQueue);
