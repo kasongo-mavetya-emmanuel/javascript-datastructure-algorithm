@@ -24,9 +24,11 @@ class HashTable{
     get(key){
         let index=this._hash(key);
         if(this.keyMap[index]){
-          for(let i;i<this.keyMap[index].length;i++){
+
+          for(let i=0;i<this.keyMap[index].length;i++){
+
             if(this.keyMap[index][i][0]===key){
-                return this.keyMap[index][i];
+                return this.keyMap[index][i][1];
             }
           }
         }
@@ -42,5 +44,6 @@ ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
+console.log(ht.get('yellow'));
 
 console.log(ht.keyMap);
