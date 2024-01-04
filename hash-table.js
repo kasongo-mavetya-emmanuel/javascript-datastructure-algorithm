@@ -46,6 +46,7 @@ class HashTable{
                 }
             }
         }
+        return keysArr;
     }
 
 }
@@ -58,5 +59,6 @@ ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
 console.log(ht.get('yellow'));
+console.log(ht.keys());
 
-console.log(ht.keyMap);
+//console.log(ht.keyMap);
