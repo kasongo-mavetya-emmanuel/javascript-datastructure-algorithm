@@ -49,6 +49,21 @@ class HashTable{
         return keysArr;
     }
 
+    values(){
+        let valuesArr=[];
+        for(let i=0; i<this.keyMap.length;i++){
+            if(this.keyMap[i]){
+                for(let j=0; j<this.keyMap[i].length;j++){
+                    if(!valuesArr.includes(this.keyMap[i][j][1])){
+                        valuesArr.push(this.keyMap[i][j][1]);
+                    }
+                }
+            }
+        }
+        return valuesArr;
+    }
+
+
 }
 const ht= new HashTable();
 ht.set("maroon","#800000")
@@ -58,7 +73,9 @@ ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
-console.log(ht.get('yellow'));
-console.log(ht.keys());
+//console.log(ht.get('yellow'));
+// console.log(ht.keys());
+console.log(ht.values());
+
 
 //console.log(ht.keyMap);
