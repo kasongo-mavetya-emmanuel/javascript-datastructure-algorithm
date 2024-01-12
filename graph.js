@@ -41,8 +41,11 @@ g.addEdge("Hong Kong", "Tokyo");
 g.addEdge("Hong Kong", "Dallas");
 g.addEdge("Los Angeles", "Hong Kong");
 g.addEdge("Los Angeles", "Aspen");
-// g.removeEdge("Hong Kong", "Tokyo");
-// g.removeEdge("Dallas", "Aspen");
+g.removeEdge("Hong Kong", "Tokyo");
+g.removeEdge("Dallas", "Aspen");
+// g.removeVertex("Los Angeles");
+// g.removeVertex('Aspen')
+
 console.log(g);
 
 
