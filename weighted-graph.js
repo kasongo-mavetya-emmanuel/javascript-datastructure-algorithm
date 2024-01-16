@@ -12,3 +12,8 @@ class WeightedGraph {
 
     }
 }
+const g = new WeightedGraph();
+g.addVertex("A");
+g.addVertex("B");
+g.addEdge("A", "B", 90);
+console.log(g.adjacenyList);
